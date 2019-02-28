@@ -1,0 +1,34 @@
+.header-container {
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: solid 1px #aaa;
+  overflow: hidden;
+}
+
+.header-info {
+  display: block;
+  position: relative;
+  margin: 10px;
+}
+
+.header-info-name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.header-info-desc {
+  font-size: .9em;
+}
+
+.header-main-nav {
+  margin: 0;
+  list-style: none;
+}
+
+.header-main-nav-item {
+  display: block;
+  position: relative;
+  float: left;
+  line-height: 24px;
+  margin: 0 10px;
+}
