@@ -1,110 +1,70 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+title:            Huy Nguyen
+description:      David Ng
+disqus_shortname: 
+reading_time:     false
+comments:         yes
+words_per_minute: 
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
+url:
 
-# Site settings
-title: 还是夸张一点技术栈
-brief-intro: C# VB 小程序 Vue
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://18487115313.github.io" # the base hostname & protocol for your site
+# Owner/author information
+owner:
+  name:           David Ng
+  avatar:         avatar.jpg
+  bio:            "The only thing that never changes is that everything always changes."
+  email:          
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        david15894
+  facebook:       david15894
+  github:         minhhuy150894
+  stackexchange:  
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:    +HuyNguyenMinhStormChaser
 
-permalink: /:year/:month/:day/:title/
+# Background image to be tiled on all pages
+background: 
 
-# other links
-twitter_username: #gaohaoyang126
-facebook_username: #gaohaoyang.water
-github_username:  18487115313
-email: 18487115313@163.com
-weibo_username: 云南腾云生态产业大数据-员工
-zhihu_username:
-linkedIn_username:
-dribbble_username:
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
 
-description_footer: 来自还是夸张一点的个人专栏
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/New_York
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
 
-# comments
-# two ways to comment, only choose one, and use your own short name
-# 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #hygblog
-disqus_shortname: #gaohaoyang
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
 
-# statistic analysis 统计代码
-# 百度统计 id，将统计代码替换为自己的百度统计id，即
-# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
-# xxxxx字符串
-baidu_tongji_id: 552aa8d99c04e57a157ba015b317ce20
-google_analytics_id: UA-72449510-4 # google 分析追踪id
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
+# Amount of post to show on home page
+paginate: 1
 
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
 
-# port
-# port: 1234
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
 
-# url
-category_dir: category/
-tag_dir: tag/
-
-# excerpt
-excerpt_separator: "\n\n\n\n"
-
-# paginate
-plugins: [jekyll-paginate]
-paginate: 6
-port: 4001
-theme: jekyll-theme-cayman
-# html minify
-compress_html:
-  clippings: all
-  comments: all
-  endings: []
-  profile: false
-  # Links to include in menu navigation
-links:
-  section_1:
-    - title: home
-      url: /
-      key_trigger: 1
-    - title: my posts
-      url: /posts
-      key_trigger: 2
-    - title: series
-      url: /series
-      key_trigger: 3
-    - title: tags
-      url: /tags
-      key_trigger: 4
-    - title: about me
-      url: /about
-      key_trigger: 5
-  section_2:
-    - title: github
-      url: http://www.github.com/victorvoid
-      new_tab: true
-      key_trigger: g
-    - title: twitter
-      url: http://www.twitter.com/victorvoid
-      key_trigger: t
-    - title: search
-      url: ""
-      key_trigger: s #WARNING: search only works with "s"
-
-      # projects in header index
-projects:
-  - name: fluany
-    url: https://github.com/fluany/fluany
-  - name: vim-frontend
-    url: https://github.com/victorvoid/vim-frontend
-  - name: generator-capybara
-    url: https://github.com/victorvoid/generator-capybara 
-
-# exclude my node related stuff
-exclude: ['package.json', 'src', 'node_modules']
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

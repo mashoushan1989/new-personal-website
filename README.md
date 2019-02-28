@@ -1,126 +1,48 @@
-# Space Jekyll
+<h2>How to use your own domain for github page?</h2>
+<a href="https://www.youtube.com/watch?v=sTBY0D4gLg4" target="_blank">View my tutorials video here!</a>
+<br><br><br>
+<h2>How to use this template?</h2>
+You can fork this project to your own project. <br>
+Ex: fork and rename this repository to "yourname", you'll get the following address: yourusername.github.io/yourname
+<br>Or clone it to your local (by using gitGUI or from cmd line), modify something and push from local to your account. <br>
+<h2>How to change my title and something else? </h2>
+Go to <b>_config.yml</b> file and change to what you want, you can add some social account to your profile view.
 
-A simple and elegant Jekyll theme based on Spacemacs. The theme works well on mobile devices as well.
-
-See a live demo [here](https://victorvoid.github.io/space-jekyll-template/).
-
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/screenshot.png?raw=true)
-
-# Site/User Settings
-
-customize your site in ``_config.yml``
-
-```ruby
-
-# Site settings
-description: A blog about lorem ipsum
-baseurl: "" # the subpath
-url: "" # the base hostname &/|| protocol for your site
-
-# User settings
-username: Lorem Ipsum
-user_description: Lorem Developer
-user_title: Lorem Ipsum
-email: lorem@ipsum.com
-twitter_username: loremipsum
-github_username:  loremipsum
-gplus_username:  loremipsum
-disqus_username: loremipsum
+<h2>How to create new posts ?</h2>
+create new file in <b>_posts</b> folder, the name of the file should be begin with "yyyy-mm-dd" and separated by "-" (dash) and end with ".md" (markdown format). Ex: "2015-05-12-documents.md" <br>
+In the beginning of the content, copy and paste following:
 
 ```
-
-See more about project and links in [_config.yml](./_config.yml)
-
-## How to create a post ?
-
-_posts create a file .md with structure:
-
-```md
----
+--- 
 layout: post
-title: "Lorem ipsum speak.."
-date: 2016-09-13 01:00:00
-image: '/assets/img/post-image.png'
-description: 'about tech'
-tags:
-- lorem
-- tech
-categories:
-- Lorem ipsum
-twitter_text: 'How to speak with Lorem'
+title:
+description: "abcd"
+modified: 2014-12-23
+tags: [abc, def]
 ---
 ```
 
-## How to insert new links on menu navigation ?
+<br>
+change your title, tag, modified date time...
 
-![](https://github.com/victorvoid/space-jekyll-template/blob/master/src/img/menu.png)
+<br>
+<h2>How to post code?</h2>
+use: <br>
 
-You should open `_config.yml` and change/add `links` section:
-
-```yaml
-links:
-  section_1: # you can use any name
-    - title: home # show on menu
-      url: / #link
-      key_trigger: 1 # link shortcut and show on the left of the title
-    - title: my posts
-      url: /posts
-      key_trigger: 2
-    - title: series
-      url: /series
-      key_trigger: 3
-    - title: tags
-      url: /tags
-      key_trigger: 4
-    - title: about me
-      url: /about
-      key_trigger: 5
+```
+{% highlight css %}
+{% endhighlight %}
 ```
 
-Frontend Technologies
----------------------
-* [Gulp](https://gulpjs.com/): The streaming build system.
-* [Stylus](http://stylus-lang.com/): expressive, dynamic, robust CSS.
-* [BrowserSync](https://www.browsersync.io/): Time-saving synchronised browser testing.
-* [Rupture](https://github.com/jescalan/rupture): Simple media queries for stylus.
-* [Kouto-Swiss](http://kouto-swiss.io/): A complete CSS framework for Stylus.
-* [Jeet](http://jeet.gs/): A grid system for human.
-* [Zepto.js](http://zeptojs.com/): The aerogel-weight jQuery-compatible JavaScript library.
+<br>
+you can change "css" to some other languages such as cpp, java, html...
+<br>
+<br>
+<h2>How to add or change menu on the left side? </h2>
+Go to <b> _includes/navigation.html </b>
 
-## How can I modify the theme ?
+<h2>How to change color or anything else in the fixed navigation bar at the top? </h2>
+Go to <b>_includes/head.html</b>
 
-First, install [jekyll](https://jekyllrb.com/) and [node.js](https://nodejs.org/).
-
-1. Fork the theme with your username, example: `charlie.github.io`
-2. Clone repository to your computer
-3. run `npm install`
-4. run `gulp`
-5. Be happy by modifying the files
-
-**Space Jekyll** uses the [Stylus](http://stylus-lang.com/) to process his css, then modifies the style of the theme in [this folder](https://github.com/victorvoid/space-jekyll-template/tree/master/src/styl).
-
-You can go in the [variable.styl](https://github.com/victorvoid/space-jekyll-template/blob/master/src/styl/_variables.styl) and modify the colors. 
-
-
-## License
-The MIT License (MIT)
-
-Copyright (c) 2016 Victor Igor
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+<h2>How about the background color?</h2>
+Go to <b>_sass/_page.scss</b>
