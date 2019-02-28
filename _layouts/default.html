@@ -1,47 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+Linear by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
-    {% if page.excerpt %}<meta name="description" content="{{ page.excerpt | strip_html }}">{% endif %}
-    {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
-    {% if page.author %}
-      {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
-    {% endif %}
-    {% include open-graph.html %}
+<head>
+	<title>Linear by TEMPLATED</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/assets/js/skel.min.js"></script>
+	<script src="/assets/js/skel-panels.min.js"></script>
+	<script src="/assets/js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/assets/css/style.css" />
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+	</noscript>
+</head>
+<body>
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+	<!-- Header -->
+	<div id="header">
+		{% include nav.html %}
+		<div class="container">
 
-    <link href="{{ site.url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
-    <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#">Linear</a></h1>
+				<span class="tag">By TEMPLATED</span>
+			</div>
+		</div>
+	</div>
+	<!-- Header -->
+	{{ content }}
+	
+	<!-- Tweet -->
+	<div id="tweet">
+		<div class="container">
+			<section>
+				<blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
+			</section>
+		</div>
+	</div>
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cleartype" content="on">
 
-    <link rel="stylesheet" href="{{ site.url }}/css/main.css">
-    <!-- HTML5 Shiv and Media Query Support for IE -->
-    <!--[if lt IE 9]>
-      <script src="{{ site.url }}/js/vendor/html5shiv.min.js"></script>
-      <script src="{{ site.url }}/js/vendor/respond.min.js"></script>
-    <![endif]-->
+<!-- Footer -->
+<div id="footer">
+	<div class="container">
+		<section>
+			<header>
+				<h2>Get in touch</h2>
+				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+			</header>
+			<ul class="contact">
+				<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+				<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+				<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+				<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+			</ul>
+		</section>
+	</div>
+</div>
 
-  </head>
+<!-- Copyright -->
+<div id="copyright">
+	<div class="container">
+		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
+	</div>
+</div>
 
-  <body id="js-body">
-    {% include browser-upgrade.html %}
-    {% include header.html %}
-    {% include navigation-sliding.html %}
-
-    <div id="page-wrapper">
-      {{ content }}
-      {% include footer.html %}
-    </div>
-
-    <script src="{{ site.url }}/js/vendor/jquery-1.9.1.min.js"></script>
-    <script src="{{ site.url }}/js/main.js"></script>
-
-  </body>
-
+</body>
 </html>
