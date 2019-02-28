@@ -128,10 +128,10 @@
 }
 
 .banner-theme-default {
-    background: -webkit-linear-gradient(0deg, #3CD5FF, #007AFF);
-    background: -o-linear-gradient(0deg, #3CD5FF, #007AFF);
-    background: -moz-linear-gradient(0deg, #3CD5FF, #007AFF);
-    background: linear-gradient(100deg, #3CD5FF, #007AFF);
+    background: -webkit-linear-gradient(0deg, #ffffff, #ffffff);
+    background: -o-linear-gradient(0deg, #ffffff, #ffffff);
+    background: -moz-linear-gradient(0deg, #ffffff, #ffffff);
+    background: linear-gradient(100deg, #ffffff, #ffffff);
 }
 .banner-theme-pink {
     background: -webkit-linear-gradient(0deg, #FFCE69, #FA709A);
@@ -539,7 +539,7 @@
     padding: 0 0 32px;
     .highlight {
         margin: 0 0 16px;
-        /** overflow: scroll;  修复代码高亮 显示两个 scroll的问题 **/ 
+        /** overflow: scroll;  修复代码高亮 显示两个 scroll的问题 **/
     }
     img {
         transition: .3s;
