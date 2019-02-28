@@ -1,12 +1,12 @@
 ---
-title: Tags
+title: 博客标签
 layout: default
 ---
 
 {% include header.html %}
 
-<div class="g-banner tags-banner {{ site.postPatterns | prepend: 'post-pattern-' }} {{ site.theme-color | prepend: 'bgcolor-' }}" data-theme="{{ site.theme-color }}">
-    <h2>TAGS</h2>
+<div class="g-banner home-banner banner-theme-default" style ="background:url(/assets/img/header.png)" data-theme="default">
+    <h2>博客标签</h2>
 </div>
 
 <main class="tags-content">
@@ -19,7 +19,7 @@ layout: default
             {% endfor %}
         {% endif %}
         </li>
-        
+
         {% for tag in site.tags %}
         <li>
             <span class="tag-name" id="{{ tag[0] }}">「{{ tag[0] }}」</span>
@@ -30,5 +30,5 @@ layout: default
         {% endfor%}
     </ul>
 </main>
-    
+
 {% include footer.html %}
