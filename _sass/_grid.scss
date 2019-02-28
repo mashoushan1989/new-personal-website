@@ -1,47 +1,105 @@
-// Defining number of columns in the grid.
-// Common Values would be 12, 16 or 24
-$width: 100%;
-$def_grid: 12;
-$margin: 0;
-
-@mixin container(){
-  margin:0 auto;
-  width:$width;
-}
-                                      
-// Works out the width of elements based
-// on total number of columns and width
-// number of columns being displayed.
-// Removes 20px for margins
-@mixin grid($grid:$def_grid,$cols:'',$float:left,$display:inline){
-  display:$display;
-  float:$float;
-  width:(100%/$grid * $cols) - ($margin * 2);
-}  
-
-// Allows for padding before element
-@mixin prefix($grid:$def_grid,$cols:''){
-  margin-left:(100%/$grid * $cols);
-}
-// Allows for padding after element
-@mixin suffix($grid:$def_grid,$cols:''){  
-  margin-right:(100%/$grid * $cols);    
-}
-// Removes left margin
-@mixin first(){
-  margin-left:0;
-}
-// Removes right margin
-@mixin last(){
-  margin-right:0;
+.container {
+  max-width: 960px;
+  margin: 0 auto 1.5em;
+  width: 80%;
 }
 
-@mixin push($grid:$def_grid,$move:'') {
-  position:relative;
-  left:(100%/$grid * $move);
-} 
+/* .row */
+.row {
+  margin-top: 2.0833%;
+  padding: 0 1.04165%;
+}
 
-@mixin pull($grid:$def_grid,$move:''){
-  position:relative;
-  left:(100%/$grid * $move) * -1;
+.row:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+/* col */
+.row [class^='col-'] {
+  float: left;
+  min-height: 50px;
+  margin-left: 2.083333%;
+}
+
+.row [class^='col-']:first-child {
+  margin-left: 0;
+}
+
+/* .col-1 */
+.row .col-1 {
+  width: 6.42291%;
+}
+
+/* .col-2 */
+.row .col-2 {
+  width: 14.930208%;
+}
+
+/* .col-3 */
+.row .col-3 {
+  width: 23.4375%;
+}
+
+/* .col-4 */
+.row .col-4 {
+  width: 31.94375%;
+}
+
+/* .col-5 */
+.row .col-5 {
+  width: 40.25%;
+}
+
+/* .col-6 */
+.row .col-6 {
+  width: 48.958333%;
+}
+
+/* .col-7 */
+.row .col-7 {
+  width: 57.464583%;
+}
+
+/* .col-8 */
+.row .col-8 {
+  width: 65.970833%;
+}
+
+/* .col-9 */
+.row .col-9 {
+  width: 74.404166%;
+}
+
+/* .col-10 */
+.row .col-10 {
+  width: 82.9833%;
+}
+
+/* .col-11 */
+.row .col-11 {
+  width: 91.489583%;
+}
+
+/* .col-12 */
+.row .col-12 {
+  width: 100%;
+}
+
+/* 
+
+    Mediaqueries 
+
+*/
+@media screen and (max-width: 768px) {
+  .row {
+    margin-top: 0;
+  }
+
+  .row [class^='col-'] {
+    width: 100%;
+    margin-top: 2.0833%;
+    margin-left: 0;
+  }
 }
