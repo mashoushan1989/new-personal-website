@@ -1,83 +1,16 @@
-<!DOCTYPE HTML>
-<!--
-Linear by TEMPLATED
-templated.co @templatedco
-Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
+<!DOCTYPE html>
 <html>
-<head>
-	<title>还是夸张一点的个人博客</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-	<script src="/assets/js/skel.min.js"></script>
-	<script src="/assets/js/skel-panels.min.js"></script>
-	<script src="/assets/js/init.js"></script>
-	<script type="text/javascript">
-		// #mobilebg{background: url('../image/open/one_bg.png') no-repeat; -moz-background-size: 100% 100%; background-size: 100% 100%; padding-left:50px;  padding-top:70px;}
-	</script>
-	<noscript>
-		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
-		<link rel="stylesheet" href="/assets/css/style.css" />
-		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
-	</noscript>
-</head>
+{% include head.html %}
 <body>
-
-	<!-- Header -->
-	<div id="header">
-		{% include nav.html %}
-		<div class="container">
-
-			<!-- Logo -->
-			<div id="logo">
-				<h1><a href="#">还是夸张一点</a></h1>
-
-				<span class="tag">总有一天能写出诗一样的代码!</span>
-			</div>
-		</div>
-	</div>
-	<!-- Header -->
-	{{ content }}
-
-	<!-- Tweet -->
-	<div id="tweet">
-		<div class="container">
-			<section>
-				<blockquote>&ldquo;2017年毕业至今的一个菜鸡，会一点C#，会一点VB，会一点Vue，会一点小程序，会一点MVC，会一点MVVM&rdquo;</blockquote>
-			</section>
-		</div>
-	</div>
-
-
-<!-- Footer -->
-<div id="footer">
-	<div class="container">
-		<section>
-			<header>
-				<h2>联系方式</h2>
-				<span class="byline">有问题或者见解可以联系我呢</span>
-			</header>
-			<ul class="contact">
-				<li><a href="#" class="fa fa-qq"><span>1572804782</span></a></li>
-				<li class="active"><a href="#" class="fa fa-weixin"><span>微信:不给</span></a></li>
-				<li><a href="#" class="fa fa-weibo"><span>微博</span></a></li>
-				<li><a href="#" class="fa fa-envelope-open"><span>18487115313@163.com</span></a></li>
-			</ul>
-		</section>
-	</div>
-</div>
-
-<!-- Copyright -->
-<div id="copyright">
-	<div class="container">
-		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
-	</div>
-</div>
-
+    <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+    <input id="nm-switch" type="hidden" value="{{ site.nightMode }}">
+    <div class="visible">
+      {{ content }}
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/index.min.js"></script>
 </body>
 </html>
