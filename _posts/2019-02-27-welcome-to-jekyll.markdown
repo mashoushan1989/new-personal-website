@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "这是我搭建出来的第一个博客!"
 date:   2019-02-27 17:54:09 +0800
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+在文件目录中找到文件名为： `_posts` 的文件。 可以编辑更改博客内容. 您可以用许多不同的方法重建站点，但最常见的方法是运行 `jekyll serve`, 当文件更新时，它会启动web服务器并自动重新生成站点。
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+要添加新文章，只需在 `_posts` 遵循约定的目录 `YYYY-MM-DD-name-of-post.ext` 包括必要的前沿问题. 看一看这篇文章的来源，了解一下它是如何工作的.
 
-Jekyll also offers powerful support for code snippets:
+Jekyll还提供了对代码片段的强大支持:
 
 {% highlight ruby %}
 def print_hi(name)
