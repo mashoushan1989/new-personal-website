@@ -492,7 +492,7 @@ a {
   margin: 0;
   color: #fff;
   overflow: hidden;
-  background-color: #4285f4;
+  background-color: #2f3139;
   z-index: 0; }
   .post-header h1 {
     font-size: 32px;
@@ -561,7 +561,7 @@ a {
     z-index: -2; }
 
 .bgcolor-default {
-  background-color: #1494FB; }
+  background-color: #2f3139; }
 
 .bgcolor-pink {
   background-color: #FC6794; }
