@@ -706,6 +706,12 @@
 		.fa-sun-o:before{content:"\f185"}
 		.fa-moon-o:before{content:"\f186"}
 		.fa-archive:before{content:"\f187"}
+		.fa-qq:before {  content: "\f1d6";}
+		.fa-wechat:before,
+    .fa-weixin:before {content: "\f1d7";}
+		.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
 		.fa-bug:before{content:"\f188"}
 		.fa-vk:before{content:"\f189"}
 		.fa-weibo:before{content:"\f18a"}
