@@ -1,5 +1,5 @@
-document.write("<link rel='stylesheet'src='../css/sweet-alert.css'></link>")
-document.write("<script language=javascript src='sweet-alert.js'></script>")
+document.write("<link rel='stylesheet'src='/assets/css/sweet-alert.css'></link>")
+document.write("<script language=javascript src='/assets/js/sweet-alert.js'></script>")
 var Gitment =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
