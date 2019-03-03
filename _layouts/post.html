@@ -1,18 +1,5 @@
 <!DOCTYPE html>
-    <div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-    owner: '18487115313',
-    repo: '18487115313.github.io',
-    oauth: {
-        client_id: '1899bc3b6e1494ce68b5',
-        client_secret: 'b934e6fa3b90f3f129e5698915b9949d8f59b3d2',
-    },
-});
-gitment.render('gitmentContainer');
-</script>
+
 <html>
 {% include post-head.html %}
 
@@ -161,5 +148,18 @@ gitment.render('gitmentContainer');
   <script src="/assets/js/prism.js"></script>
   <script src="/assets/js/index.min.js"></script>
 </body>
-
+ <div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: '18487115313',
+    repo: '18487115313.github.io',
+    oauth: {
+        client_id: '1899bc3b6e1494ce68b5',
+        client_secret: 'b934e6fa3b90f3f129e5698915b9949d8f59b3d2',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
 </html>
