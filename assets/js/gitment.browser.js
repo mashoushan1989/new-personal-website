@@ -2905,6 +2905,7 @@ function renderComments(_ref2, instance) {
         initButton.setAttribute('disabled', true);
         instance.init().catch(function (e) {
           initButton.removeAttribute('disabled');
+          console.log("弹出2="+JSON.stringify(e))
           alert(e);
         });
       };
@@ -3103,6 +3104,7 @@ function renderEditor(_ref3, instance) {
       submitButton.removeAttribute('disabled');
       submitButton.innerText = 'Comment';
     }).catch(function (e) {
+      console.log("弹出3="+JSON.stringify(e))
       alert(e);
       submitButton.removeAttribute('disabled');
       submitButton.innerText = 'Comment';
@@ -3422,6 +3424,7 @@ var Gitment = function () {
         _this.update();
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
+        console.log("弹出1="+JSON.stringify(e))
         alert(e);
       });
     } else {
