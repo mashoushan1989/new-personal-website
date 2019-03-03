@@ -3428,7 +3428,7 @@ var Gitment = function () {
         _this.state.user.isLoggingIn = false;
         console.log("弹出1="+JSON.stringify(e))
         sweetAlert("Oops...", "Something went wrong!", "error");
-        // alert(e);
+        alert(e);
       });
     } else {
       this.update();
