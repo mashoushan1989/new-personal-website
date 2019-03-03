@@ -106,25 +106,25 @@
     </section>
     {% endif %}
   </section>
-
+  <div id="gitmentContainer"></div>
+  <link rel="stylesheet" href="/assets/css/default.css"/>
+  <script src="/assets/js/gitment.browser.js"></script>
+    <script src="/assets/js/js-MD5.js"></script>
+  <script>
+  var gitment = new Gitment({
+      id: md5(window.location.pathname),
+      owner: '18487115313',
+      repo: '18487115313.github.io',
+      oauth: {
+          client_id: '1899bc3b6e1494ce68b5',
+          client_secret: 'b934e6fa3b90f3f129e5698915b9949d8f59b3d2',
+      },
+  });
+  gitment.render('gitmentContainer');
+  </script>
 
   {% include footer.html %}
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="/assets/css/default.css"/>
-<script src="/assets/js/gitment.browser.js"></script>
-  <script src="/assets/js/js-MD5.js"></script>
-<script>
-var gitment = new Gitment({
-    id: md5(window.location.pathname),
-    owner: '18487115313',
-    repo: '18487115313.github.io',
-    oauth: {
-        client_id: '1899bc3b6e1494ce68b5',
-        client_secret: 'b934e6fa3b90f3f129e5698915b9949d8f59b3d2',
-    },
-});
-gitment.render('gitmentContainer');
-</script>
+
 
   <script src="/assets/js/social-share.min.js"></script>
   <script>
