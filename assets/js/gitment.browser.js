@@ -1,3 +1,5 @@
+document.write("<script language=javascript src='sweet-alert.js'></script>");
+document.write("<link rel='stylesheet'href='../css/sweet-alert.css'></link>");
 var Gitment =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -2919,7 +2921,7 @@ function renderComments(_ref2, instance) {
     return container;
   } else if (comments === undefined) {
     var loading = document.createElement('div');
-    loading.innerText = '正在加载评论...';
+    loading.innerText = '正在加载评论...(如果是登录GitHub之后出现一直在登录中，请你换下浏览器)';
     loading.className = 'gitment-comments-loading';
     container.appendChild(loading);
     return container;
@@ -3084,7 +3086,7 @@ function renderEditor(_ref3, instance) {
     var preview = previewField.querySelector('.gitment-editor-preview');
     var content = textarea.value.trim();
     if (!content) {
-      preview.innerText = 'Nothing to preview';
+      preview.innerText = '先写内容，然后才能看啊 啊啊啊啊';
       return;
     }
 
@@ -3425,8 +3427,8 @@ var Gitment = function () {
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
         console.log("弹出1="+JSON.stringify(e))
-        // sweetAlert("Oops...", "Something went wrong!", "error");
-        alert(e);
+        swal("Here's a message!", "It's pretty, isn't it?")
+        // alert(e);
       });
     } else {
       this.update();
