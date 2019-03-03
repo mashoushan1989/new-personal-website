@@ -110,11 +110,12 @@
 
   {% include footer.html %}
 <div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<link rel="stylesheet" href="/assets/css/default.css">
+<script src="/assets/js/gitment.browser.js"></script>
+  <script src="/assets/js/js-MD5.js"></script>
 <script>
 var gitment = new Gitment({
-    id: window.location.pathname,
+    id: md5(window.location.pathname),
     owner: '18487115313',
     repo: '18487115313.github.io',
     oauth: {
@@ -139,7 +140,7 @@ gitment.render('gitmentContainer');
       wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
     });
   </script>
- 
+
   {% if site.comments.disqus %}
   <script>
     /**
