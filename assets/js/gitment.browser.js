@@ -1,3 +1,5 @@
+document.write("<link rel='stylesheet'src='../css/sweet-alert.css'></link>")
+document.write("<script language=javascript src='sweet-alert.js'></script>")
 var Gitment =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -3425,7 +3427,8 @@ var Gitment = function () {
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
         console.log("弹出1="+JSON.stringify(e))
-        alert(e);
+        sweetAlert("Oops...", "Something went wrong!", "error");
+        // alert(e);
       });
     } else {
       this.update();
@@ -3645,7 +3648,7 @@ var Gitment = function () {
       var _this12 = this;
 
       if (!this.accessToken) {
-        alert('Login to Like');
+        alert('请登录GitHub');
         return Promise.reject();
       }
 
@@ -3685,7 +3688,7 @@ var Gitment = function () {
       var _this14 = this;
 
       if (!this.accessToken) {
-        alert('Login to Like');
+        alert('请登录GitHub');
         return Promise.reject();
       }
 
