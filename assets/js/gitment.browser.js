@@ -1,5 +1,3 @@
-document.write("<link rel='stylesheet'src='/assets/css/sweet-alert.css'></link>")
-document.write("<script language=javascript src='/assets/js/sweet-alert.js'></script>")
 var Gitment =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -2877,7 +2875,7 @@ function renderHeader(_ref, instance) {
   issueLink.className = 'gitment-header-issue-link';
   issueLink.href = meta.html_url;
   issueLink.target = '_blank';
-  issueLink.innerText = 'Issue Page';
+  issueLink.innerText = '查看GitHub中Issue';
   container.appendChild(issueLink);
 
   return container;
@@ -2921,14 +2919,14 @@ function renderComments(_ref2, instance) {
     return container;
   } else if (comments === undefined) {
     var loading = document.createElement('div');
-    loading.innerText = 'Loading comments...';
+    loading.innerText = '正在加载评论...';
     loading.className = 'gitment-comments-loading';
     container.appendChild(loading);
     return container;
   } else if (!comments.length) {
     var emptyBlock = document.createElement('div');
     emptyBlock.className = 'gitment-comments-empty';
-    emptyBlock.innerText = 'No Comment Yet';
+    emptyBlock.innerText = '还没有评论呢，你要不要抢个沙发';
     container.appendChild(emptyBlock);
     return container;
   }
@@ -3041,8 +3039,8 @@ function renderEditor(_ref3, instance) {
   container.className = 'gitment-container gitment-editor-container';
 
   var shouldDisable = user.login && !error ? '' : 'disabled';
-  var disabledTip = user.login ? '' : 'Login to Comment';
-  container.innerHTML = '\n      ' + (user.login ? '<a class="gitment-editor-avatar" href="' + user.html_url + '" target="_blank">\n            <img class="gitment-editor-avatar-img" src="' + user.avatar_url + '"/>\n          </a>' : user.isLoggingIn ? '<div class="gitment-editor-avatar">' + _icons.spinner + '</div>' : '<a class="gitment-editor-avatar" href="' + instance.loginLink + '" title="login with GitHub">\n              ' + _icons.github + '\n            </a>') + '\n    </a>\n    <div class="gitment-editor-main">\n      <div class="gitment-editor-header">\n        <nav class="gitment-editor-tabs">\n          <button class="gitment-editor-tab gitment-selected">Write</button>\n          <button class="gitment-editor-tab">Preview</button>\n        </nav>\n        <div class="gitment-editor-login">\n          ' + (user.login ? '<a class="gitment-editor-logout-link">Logout</a>' : user.isLoggingIn ? 'Logging in...' : '<a class="gitment-editor-login-link" href="' + instance.loginLink + '">Login</a> with GitHub') + '\n        </div>\n      </div>\n      <div class="gitment-editor-body">\n        <div class="gitment-editor-write-field">\n          <textarea placeholder="Leave a comment" title="' + disabledTip + '" ' + shouldDisable + '></textarea>\n        </div>\n        <div class="gitment-editor-preview-field gitment-hidden">\n          <div class="gitment-editor-preview gitment-markdown"></div>\n        </div>\n      </div>\n    </div>\n    <div class="gitment-editor-footer">\n      <a class="gitment-editor-footer-tip" href="https://guides.github.com/features/mastering-markdown/" target="_blank">\n        Styling with Markdown is supported\n      </a>\n      <button class="gitment-editor-submit" title="' + disabledTip + '" ' + shouldDisable + '>Comment</button>\n    </div>\n  ';
+  var disabledTip = user.login ? '' : '登录发表评论';
+  container.innerHTML = '\n      ' + (user.login ? '<a class="gitment-editor-avatar" href="' + user.html_url + '" target="_blank">\n            <img class="gitment-editor-avatar-img" src="' + user.avatar_url + '"/>\n          </a>' : user.isLoggingIn ? '<div class="gitment-editor-avatar">' + _icons.spinner + '</div>' : '<a class="gitment-editor-avatar" href="' + instance.loginLink + '" title="login with GitHub">\n              ' + _icons.github + '\n            </a>') + '\n    </a>\n    <div class="gitment-editor-main">\n      <div class="gitment-editor-header">\n        <nav class="gitment-editor-tabs">\n          <button class="gitment-editor-tab gitment-selected">编写评论</button>\n          <button class="gitment-editor-tab">预览编写内容</button>\n        </nav>\n        <div class="gitment-editor-login">\n          ' + (user.login ? '<a class="gitment-editor-logout-link">Logout</a>' : user.isLoggingIn ? '正在登录中....' : '<a class="gitment-editor-login-link" href="' + instance.loginLink + '">登录</a> (使用GitHub账号)') + '\n        </div>\n      </div>\n      <div class="gitment-editor-body">\n        <div class="gitment-editor-write-field">\n          <textarea placeholder="抢沙发" title="' + disabledTip + '" ' + shouldDisable + '></textarea>\n        </div>\n        <div class="gitment-editor-preview-field gitment-hidden">\n          <div class="gitment-editor-preview gitment-markdown"></div>\n        </div>\n      </div>\n    </div>\n    <div class="gitment-editor-footer">\n      <a class="gitment-editor-footer-tip" href="https://guides.github.com/features/mastering-markdown/" target="_blank">\n        评论内容支持Markdown样式化\n      </a>\n      <button class="gitment-editor-submit" title="' + disabledTip + '" ' + shouldDisable + '>留下你的评论</button>\n    </div>\n  ';
   if (user.login) {
     container.querySelector('.gitment-editor-logout-link').onclick = function () {
       return instance.logout();
@@ -3120,7 +3118,7 @@ function renderFooter() {
   var container = document.createElement('div');
   container.lang = "en-US";
   container.className = 'gitment-container gitment-footer-container';
-  container.innerHTML = '\n    Powered by\n    <a class="gitment-footer-project-link" href="https://github.com/imsun/gitment" target="_blank">\n      Gitment\n    </a>\n  ';
+  container.innerHTML = '\n    可以看看\n    <a class="gitment-footer-project-link" href="https://github.com/imsun/gitment" target="_blank">\n      Gitment\n    </a>\n  ';
   return container;
 }
 
@@ -3428,7 +3426,7 @@ var Gitment = function () {
         _this.state.user.isLoggingIn = false;
         console.log("弹出1="+JSON.stringify(e))
         // sweetAlert("Oops...", "Something went wrong!", "error");
-        alert("Oops...", "Something went wrong!", "error");
+        alert(e);
       });
     } else {
       this.update();
@@ -3648,7 +3646,7 @@ var Gitment = function () {
       var _this12 = this;
 
       if (!this.accessToken) {
-        alert('请登录GitHub');
+        alert('先登录GitHub才能操作');
         return Promise.reject();
       }
 
