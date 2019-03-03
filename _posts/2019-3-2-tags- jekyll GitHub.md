@@ -16,7 +16,7 @@ tags: jekyll GitHub
 > * 撰写发布学术论文（LaTeX 公式支持）
 
 ![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
-
+![图片](https://github.com/18487115313/18487115313.github.io/blob/master/screenshot/jekyll-theme-h2o-heroPatterns.png)
 除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
 
 ### [Windows/Mac/Linux 全平台客户端](https://www.zybuluo.com/cmd/)
@@ -196,4 +196,3 @@ Bob-->Alice: I am good thanks!
 [2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册
 [3]: http://weibo.com/ghosert
 [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-
