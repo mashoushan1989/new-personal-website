@@ -2907,8 +2907,9 @@ function renderComments(_ref2, instance) {
         initButton.setAttribute('disabled', true);
         instance.init().catch(function (e) {
           initButton.removeAttribute('disabled');
-          console.log("弹出2="+JSON.stringify(e))
-          alert(e);
+          // console.log("弹出2="+JSON.stringify(e))
+          swal("提示一下",JSON.stringify(e))
+          // alert(e);
         });
       };
       initButton.innerText = 'Initialize Comments';
@@ -3106,8 +3107,9 @@ function renderEditor(_ref3, instance) {
       submitButton.removeAttribute('disabled');
       submitButton.innerText = 'Comment';
     }).catch(function (e) {
-      console.log("弹出3="+JSON.stringify(e))
-      alert(e);
+      // console.log("弹出3="+JSON.stringify(e))
+      swal("提示一下",JSON.stringify(e))
+      // alert(e);
       submitButton.removeAttribute('disabled');
       submitButton.innerText = 'Comment';
     });
@@ -3426,8 +3428,8 @@ var Gitment = function () {
         _this.update();
       }).catch(function (e) {
         _this.state.user.isLoggingIn = false;
-        console.log("弹出1="+JSON.stringify(e))
-        swal("Here's a message!", "It's pretty, isn't it?")
+        // console.log("弹出1="+JSON.stringify(e))
+        swal("登录这边出了问题!", "可能是浏览器内核原因造成无法登录成功，您可以换一个浏览器")
         // alert(e);
       });
     } else {
@@ -3648,7 +3650,7 @@ var Gitment = function () {
       var _this12 = this;
 
       if (!this.accessToken) {
-        alert('先登录GitHub才能操作');
+        swal("提示一下",'先登录GitHub才能操作');
         return Promise.reject();
       }
 
@@ -3688,7 +3690,7 @@ var Gitment = function () {
       var _this14 = this;
 
       if (!this.accessToken) {
-        alert('请登录GitHub');
+        swal("提示一下",'先登录GitHub才能操作');
         return Promise.reject();
       }
 
