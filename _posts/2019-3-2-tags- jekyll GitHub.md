@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title:  "Jekyll 搭建静态博客搭建"
 date:   2019-03-02 14:26:54
@@ -8,6 +8,7 @@ tags: jekyll GitHub
 * content
 {:toc}
 ------
+
 之前一直想着搭建一个知识库，至于博客之前是在**CSDN**上写，也没写多少，偶然发现**GitHub**上可以搭建一个博客，就当做自己的知识库搭建一个了。
 
 > * 整理知识，学习笔记
@@ -16,7 +17,7 @@ tags: jekyll GitHub
 > * 撰写发布学术论文（LaTeX 公式支持）
 
 ![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
-![图片](https://github.com/18487115313/18487115313.github.io/blob/master/screenshot/jekyll-theme-h2o-heroPatterns.png)
+![](https://www.zybuluo.com/static/img/logo.png)
 除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
 
 ### [Windows/Mac/Linux 全平台客户端](https://www.zybuluo.com/cmd/)
@@ -196,3 +197,4 @@ Bob-->Alice: I am good thanks!
 [2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册
 [3]: http://weibo.com/ghosert
 [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+
