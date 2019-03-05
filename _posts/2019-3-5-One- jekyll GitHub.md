@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Jekyll 搭建静态博客搭建"
-date:   2019-03-02 14:26:54
+title:  "Jekyll+GitMent搭建"
+date:   2019-03-05 20:56
 categories: jekyll
 tags: jekyll GitHub
 ---
@@ -10,191 +10,55 @@ tags: jekyll GitHub
 ------
 
 之前一直想着搭建一个知识库，至于博客之前是在**CSDN**上写，也没写多少，偶然发现**GitHub**上可以搭建一个博客，就当做自己的知识库搭建一个了。
-
-> * 整理知识，学习笔记
-> * 发布日记，杂文，所见所想
-> * 撰写发布技术文稿（代码支持）
-> * 撰写发布学术论文（LaTeX 公式支持）
-
-![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
-![](https://www.zybuluo.com/static/img/logo.png)
-除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：
-
-### [Windows/Mac/Linux 全平台客户端](https://www.zybuluo.com/cmd/)
-
-> 请保留此份 Cmd Markdown 的欢迎稿兼使用说明，如需撰写新稿件，点击顶部工具栏右侧的 <i class="icon-file"></i> **新文稿** 或者使用快捷键 `Ctrl+Alt+N`。
-
-------
-
-## 什么是 Markdown
-
-Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，**粗体** 或者 *斜体* 某些文字，更棒的是，它还可以
-
-### 1. 制作一份待办事宜 [Todo 列表](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#13-待办事宜-todo-列表)
-
-- [ ] 支持以 PDF 格式导出文稿
-- [ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率
-- [x] 新增 Todo 列表功能
-- [x] 修复 LaTex 公式渲染问题
-- [x] 新增 LaTex 公式编号功能
-
-### 2. 书写一个质能守恒公式[^LaTeX]
-
-$$E=mc^2$$
-
-### 3. 高亮一段代码[^code]
-
-```python
-@requires_authorization
-class SomeClass:
-    pass
-
-if __name__ == '__main__':
-    # A comment
-    print 'hello world'
+**这个是测试图片怎么玩（感觉md这个图片挺麻烦的,用cmd Markdown写的)，目前也打算将文章中的图片放在博客GitHub仓库中了，不想重新弄仓库，这几记录下获取GitHub中图片地址，有点尴尬，直接右键图片取出地址的**
+![此处输入图片的描述][1]
+总得来说搭建这个还是挺简单的，如果有人Clone了我的[博客主题](https://github.com/18487115313/18487115313.github.io.git)，Clone之后需要更改![][4]
+**我在这里说一下需要更改到的地方：**
+1.这是图标![][2]，有ico格式和svg;
+2.更改**_config.yml**这个文件内容具体如下
 ```
-
-### 4. 高效绘制 [流程图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图)
-
-```flow
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
+  title: '还是夸张一点技术专栏'//这个是你自己的博客名
+  description: '一个专注于开发的普通技术民工。'//签名
+  keyword: 'C# VB Vue 小程序'//放的狠话
+  url: 'https://18487115313.github.io' # 自己的博客地址
 ```
-
-### 5. 高效绘制 [序列图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图)
-
-```seq
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
 ```
-
-### 6. 高效绘制 [甘特图](https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#9-甘特图)
-
-```gantt
-    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2016-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2016-07-05  , 5d
-        详细设计      :2016-07-08, 10d
-        编码          :2016-07-15, 10d
-        测试          :2016-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d
+# Author 配置博主信息
+author: '还是夸张一点'
+nickname: '还是夸张一点'
+bio: 'C# VB Vue 小程序'
+avatar: '/assets/img/profile.png'//这个是头像
 ```
+**评论功能就不需要弄了，我已经弄进去了**
+3.更改评论的配置在**post.html**文件中，找到以下代码
+```
+  <div id="gitmentContainer"></div>
+  <link rel="stylesheet" href="/assets/css/default.css"/>
+  <script src="/assets/js/gitment.browser.js"></script>
+  <script src="/assets/js/js-MD5.js"></script>
+  <script>
+  var gitment = new Gitment({
+      id: md5(window.location.pathname),
+      owner: '18487115313',
+      repo: '18487115313.github.io',
+      oauth: {
+          client_id: '1899bc3b6e1494ce68b5',
+          client_secret: 'b934e6fa3b90f3f129e5698915b9949d8f59b3d2',
+      },
+  });
+  gitment.render('gitmentContainer');
+  </script>
+```
+`md5(window.location.pathname)`这句代码可以更改，是生成关于评论的唯一值，我用md5加密了，也不需要改，如果不写id的话会出现默认的id值长度超过50的问题，
+` owner: '18487115313',repo: '18487115313.github.io',`这两句就是用户名以及这个仓库的名
+下面的是需要自己去手动更改的，去注册[注册新的OAuth应用程序](https://github.com/settings/applications/new)取出client_id、client_secret放进来下面附图![][3]
+4.自己更改图标，有一些的图标是**svg**格式的，自己网上在线转一下；
+5、首页的背景也可以更改，包括标签页，博客详细页都可以更改，需要自己调一下样式图片之类的；
+6、文件**README.md**里面是介绍自己博客背景以及预览之类的，自己改改，你也不希望别人看你GitHub介绍链接到我的博客吧；
+7、说一个评论的坑，初期搭建的时候可能同一个博客会出现多次初始化，导致之前的评论内容不见了，因为每次初始化相当于将当前博客的id给换了，所以会出现找不到的问题，第二个就是**GitMent**对IE内核有要求，win10自带的那个**Microsoft Edge**不支持GitHub登录评论功能，出现的问题我在汉化评论的那里标注了，出现问题可以自己查一查。
+***
 
-### 7. 绘制表格
-
-| 项目        | 价格   |  数量  |
-| --------   | -----:  | :----:  |
-| 计算机     | \$1600 |   5     |
-| 手机        |   \$12   |   12   |
-| 管线        |    \$1    |  234  |
-
-### 8. 更详细语法说明
-
-想要查看更详细的语法说明，可以参考我们准备的 [Cmd Markdown 简明语法手册][1]，进阶用户可以参考 [Cmd Markdown 高阶语法手册][2] 了解更多高级功能。
-
-总而言之，不同于其它 *所见即所得* 的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。**Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。** 目前它已经成为世界上最大的技术分享网站 GitHub 和 技术问答网站 StackOverFlow 的御用书写格式。
-
----
-
-## 什么是 Cmd Markdown
-
-您可以使用很多工具书写 Markdown，但是 Cmd Markdown 是这个星球上我们已知的、最好的 Markdown 工具——没有之一 ：）因为深信文字的力量，所以我们和你一样，对流畅书写，分享思想和知识，以及阅读体验有极致的追求，我们把对于这些诉求的回应整合在 Cmd Markdown，并且一次，两次，三次，乃至无数次地提升这个工具的体验，最终将它演化成一个 **编辑/发布/阅读** Markdown 的在线平台——您可以在任何地方，任何系统/设备上管理这里的文字。
-
-### 1. 实时同步预览
-
-我们将 Cmd Markdown 的主界面一分为二，左边为**编辑区**，右边为**预览区**，在编辑区的操作会实时地渲染到预览区方便查看最终的版面效果，并且如果你在其中一个区拖动滚动条，我们有一个巧妙的算法把另一个区的滚动条同步到等价的位置，超酷！
-
-### 2. 编辑工具栏
-
-也许您还是一个 Markdown 语法的新手，在您完全熟悉它之前，我们在 **编辑区** 的顶部放置了一个如下图所示的工具栏，您可以使用鼠标在工具栏上调整格式，不过我们仍旧鼓励你使用键盘标记格式，提高书写的流畅度。
-
-![tool-editor](https://www.zybuluo.com/static/img/toolbar-editor.png)
-
-### 3. 编辑模式
-
-完全心无旁骛的方式编辑文字：点击 **编辑工具栏** 最右侧的拉伸按钮或者按下 `Ctrl + M`，将 Cmd Markdown 切换到独立的编辑模式，这是一个极度简洁的写作环境，所有可能会引起分心的元素都已经被挪除，超清爽！
-
-### 4. 实时的云端文稿
-
-为了保障数据安全，Cmd Markdown 会将您每一次击键的内容保存至云端，同时在 **编辑工具栏** 的最右侧提示 `已保存` 的字样。无需担心浏览器崩溃，机器掉电或者地震，海啸——在编辑的过程中随时关闭浏览器或者机器，下一次回到 Cmd Markdown 的时候继续写作。
-
-### 5. 离线模式
-
-在网络环境不稳定的情况下记录文字一样很安全！在您写作的时候，如果电脑突然失去网络连接，Cmd Markdown 会智能切换至离线模式，将您后续键入的文字保存在本地，直到网络恢复再将他们传送至云端，即使在网络恢复前关闭浏览器或者电脑，一样没有问题，等到下次开启 Cmd Markdown 的时候，她会提醒您将离线保存的文字传送至云端。简而言之，我们尽最大的努力保障您文字的安全。
-
-### 6. 管理工具栏
-
-为了便于管理您的文稿，在 **预览区** 的顶部放置了如下所示的 **管理工具栏**：
-
-![tool-manager](https://www.zybuluo.com/static/img/toolbar-manager.jpg)
-
-通过管理工具栏可以：
-
-<i class="icon-share"></i> 发布：将当前的文稿生成固定链接，在网络上发布，分享
-<i class="icon-file"></i> 新建：开始撰写一篇新的文稿
-<i class="icon-trash"></i> 删除：删除当前的文稿
-<i class="icon-cloud"></i> 导出：将当前的文稿转化为 Markdown 文本或者 Html 格式，并导出到本地
-<i class="icon-reorder"></i> 列表：所有新增和过往的文稿都可以在这里查看、操作
-<i class="icon-pencil"></i> 模式：切换 普通/Vim/Emacs 编辑模式
-
-### 7. 阅读工具栏
-
-![tool-manager](https://www.zybuluo.com/static/img/toolbar-reader.jpg)
-
-通过 **预览区** 右上角的 **阅读工具栏**，可以查看当前文稿的目录并增强阅读体验。
-
-工具栏上的五个图标依次为：
-
-<i class="icon-list"></i> 目录：快速导航当前文稿的目录结构以跳转到感兴趣的段落
-<i class="icon-chevron-sign-left"></i> 视图：互换左边编辑区和右边预览区的位置
-<i class="icon-adjust"></i> 主题：内置了黑白两种模式的主题，试试 **黑色主题**，超炫！
-<i class="icon-desktop"></i> 阅读：心无旁骛的阅读模式提供超一流的阅读体验
-<i class="icon-fullscreen"></i> 全屏：简洁，简洁，再简洁，一个完全沉浸式的写作和阅读环境
-
-### 8. 阅读模式
-
-在 **阅读工具栏** 点击 <i class="icon-desktop"></i> 或者按下 `Ctrl+Alt+M` 随即进入独立的阅读模式界面，我们在版面渲染上的每一个细节：字体，字号，行间距，前背景色都倾注了大量的时间，努力提升阅读的体验和品质。
-
-### 9. 标签、分类和搜索
-
-在编辑区任意行首位置输入以下格式的文字可以标签当前文档：
-
-标签： 未分类
-
-标签以后的文稿在【文件列表】（Ctrl+Alt+F）里会按照标签分类，用户可以同时使用键盘或者鼠标浏览查看，或者在【文件列表】的搜索文本框内搜索标题关键字过滤文稿，如下图所示：
-
-![file-list](https://www.zybuluo.com/static/img/file-list.png)
-
-### 10. 文稿发布和分享
-
-在您使用 Cmd Markdown 记录，创作，整理，阅读文稿的同时，我们不仅希望它是一个有力的工具，更希望您的思想和知识通过这个平台，连同优质的阅读体验，将他们分享给有相同志趣的人，进而鼓励更多的人来到这里记录分享他们的思想和知识，尝试点击 <i class="icon-share"></i> (Ctrl+Alt+P) 发布这份文档给好友吧！
-
-------
-
-再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！
-
-作者 [@ghosert][3]     
-2016 年 07月 07日    
-
-[^LaTeX]: 支持 **LaTeX** 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 [MathJax][4] 参考更多使用方法。
-
-[^code]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，**四十一**种主流编程语言。
-
-[1]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown
-[2]: https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册
-[3]: http://weibo.com/ghosert
-[4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-
+[1]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/1494404591.png
+[2]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/favicon.ico
+[3]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/20190305202608.png
+[4]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/20190305172642.png
