@@ -52,8 +52,8 @@ avatar: '/assets/img/profile.png'//这个是头像
 
 ```
 `md5(window.location.pathname)`这句代码可以更改，是生成关于评论的唯一值，我用md5加密了，也不需要改，如果不写id的话会出现默认的id值长度超过50的问题，
-` owner: '18487115313',`  
-`repo: '18487115313.github.io',`这两句就是用户名以及这个仓库的名
+`owner: '18487115313'`  
+`repo: '18487115313.github.io'`这两句就是用户名以及这个仓库的名
 下面的是需要自己去手动更改的，去注册[注册新的OAuth应用程序](https://github.com/settings/applications/new)取出client_id、client_secret放进来下面附图![][3]  
 4.自己更改图标，有一些的图标是**svg**格式的，自己网上在线转一下；  
 5、首页的背景也可以更改，包括标签页，博客详细页都可以更改，需要自己调一下样式图片之类的；  
