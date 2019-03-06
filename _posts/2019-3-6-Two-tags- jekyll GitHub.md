@@ -31,8 +31,8 @@ avatar: '/assets/img/profile.png'//这个是头像
 ```  
 **评论功能就不需要弄了，我已经弄进去了**  
 3.更改评论的配置在**post.html**文件中，找到以下代码  
-```
-{% highlight html linenos %}
+```html
+
   <div id="gitmentContainer"></div>  
   <link rel="stylesheet" href="/assets/css/default.css"/>  
   <script src="/assets/js/gitment.browser.js"></script>  
@@ -49,7 +49,7 @@ avatar: '/assets/img/profile.png'//这个是头像
   });  
   gitment.render('gitmentContainer');  
   </script>  
-{% endhighlight %}
+
 ```
 `md5(window.location.pathname)`这句代码可以更改，是生成关于评论的唯一值，我用md5加密了，也不需要改，如果不写id的话会出现默认的id值长度超过50的问题，
 ` owner: '18487115313',repo: '18487115313.github.io',`这两句就是用户名以及这个仓库的名
