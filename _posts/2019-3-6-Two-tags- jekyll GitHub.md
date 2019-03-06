@@ -31,6 +31,7 @@ avatar: '/assets/img/profile.png'//这个是头像
 ```  
 **评论功能就不需要弄了，我已经弄进去了**  
 3.更改评论的配置在**post.html**文件中，找到以下代码  
+```
 {% highlight html linenos %}
   <div id="gitmentContainer"></div>  
   <link rel="stylesheet" href="/assets/css/default.css"/>  
@@ -49,6 +50,7 @@ avatar: '/assets/img/profile.png'//这个是头像
   gitment.render('gitmentContainer');  
   </script>  
 {% endhighlight %}
+```
 `md5(window.location.pathname)`这句代码可以更改，是生成关于评论的唯一值，我用md5加密了，也不需要改，如果不写id的话会出现默认的id值长度超过50的问题，
 ` owner: '18487115313',repo: '18487115313.github.io',`这两句就是用户名以及这个仓库的名
 下面的是需要自己去手动更改的，去注册[注册新的OAuth应用程序](https://github.com/settings/applications/new)取出client_id、client_secret放进来下面附图![][3]  
@@ -56,8 +58,7 @@ avatar: '/assets/img/profile.png'//这个是头像
 5、首页的背景也可以更改，包括标签页，博客详细页都可以更改，需要自己调一下样式图片之类的；  
 6、文件**README.md**里面是介绍自己博客背景以及预览之类的，自己改改，你也不希望别人看你GitHub介绍链接到我的博客吧；  
 7、说一个评论的坑，初期搭建的时候可能同一个博客会出现多次初始化，导致之前的评论内容不见了，因为每次初始化相当于将当前博客的id给换了，所以会出现找不到的问题，第二个就是**GitMent**对IE内核有要求，win10自带的那个**Microsoft   Edge**不支持GitHub登录评论功能，出现的问题我在汉化评论的那里标注了，出现问题可以自己查一查。  
-_ _ _
-
+...
 [1]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/1494404591.png
 [2]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/favicon.ico
 [3]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/20190305202608.png
