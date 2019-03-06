@@ -16,13 +16,13 @@ tags: jekyll GitHub
 **我在这里说一下需要更改到的地方：**  
 1.这是图标![][2]，有ico格式和svg;  
 2.更改**_config.yml**这个文件内容具体如下  
-```  
+```js
   title: '还是夸张一点技术专栏'//这个是你自己的博客名  
   description: '一个专注于开发的普通技术民工。'//签名  
   keyword: 'C# VB Vue 小程序'//放的狠话  
   url: 'https://18487115313.github.io' # 自己的博客地址  
 ```  
-```  
+```js  
 # Author 配置博主信息  
 author: '还是夸张一点'  
 nickname: '还是夸张一点'  
@@ -31,7 +31,7 @@ avatar: '/assets/img/profile.png'//这个是头像
 ```  
 **评论功能就不需要弄了，我已经弄进去了**  
 3.更改评论的配置在**post.html**文件中，找到以下代码  
-```  
+```js  
   <div id="gitmentContainer"></div>  
   <link rel="stylesheet" href="/assets/css/default.css"/>  
   <script src="/assets/js/gitment.browser.js"></script>  
@@ -56,7 +56,7 @@ avatar: '/assets/img/profile.png'//这个是头像
 5、首页的背景也可以更改，包括标签页，博客详细页都可以更改，需要自己调一下样式图片之类的；  
 6、文件**README.md**里面是介绍自己博客背景以及预览之类的，自己改改，你也不希望别人看你GitHub介绍链接到我的博客吧；  
 7、说一个评论的坑，初期搭建的时候可能同一个博客会出现多次初始化，导致之前的评论内容不见了，因为每次初始化相当于将当前博客的id给换了，所以会出现找不到的问题，第二个就是**GitMent**对IE内核有要求，win10自带的那个**Microsoft   Edge**不支持GitHub登录评论功能，出现的问题我在汉化评论的那里标注了，出现问题可以自己查一查。  
-***
+---
 
 [1]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/1494404591.png
 [2]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/favicon.ico
