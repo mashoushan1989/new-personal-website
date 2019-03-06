@@ -56,7 +56,7 @@ avatar: '/assets/img/profile.png'//这个是头像
 5、首页的背景也可以更改，包括标签页，博客详细页都可以更改，需要自己调一下样式图片之类的；  
 6、文件**README.md**里面是介绍自己博客背景以及预览之类的，自己改改，你也不希望别人看你GitHub介绍链接到我的博客吧；  
 7、说一个评论的坑，初期搭建的时候可能同一个博客会出现多次初始化，导致之前的评论内容不见了，因为每次初始化相当于将当前博客的id给换了，所以会出现找不到的问题，第二个就是**GitMent**对IE内核有要求，win10自带的那个**Microsoft   Edge**不支持GitHub登录评论功能，出现的问题我在汉化评论的那里标注了，出现问题可以自己查一查。  
----
+_ _ _
 
 [1]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/screenshot/1494404591.png
 [2]:https://raw.githubusercontent.com/18487115313/18487115313.github.io/master/favicon.ico
