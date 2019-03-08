@@ -84,6 +84,6 @@ permalink: /:year/:month/:day/:title.html
 # excerpt
 excerpt_separator: "\n\n\n\n"
 # Plugins
-plugins: [jekyll-paginate]
-paginate: 6
-port: 4001
+# plugins: [jekyll-paginate]
+# paginate: 6
+# port: 4001
