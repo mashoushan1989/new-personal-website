@@ -9,15 +9,15 @@ tags: jekyll GitHub
 {:toc}
 ------
 
-之前一直想着搭建一个知识库，至于博客之前是在**CSDN**上写，也没写多少，偶然发现**GitHub**上可以搭建一个博客，就当做自己的知识库搭建一个了。  
+ &emsp;&emsp;之前一直想着搭建一个知识库，至于博客之前是在**CSDN**上写，也没写多少，偶然发现**GitHub**上可以搭建一个博客，就当做自己的知识库搭建一个了。  
 **这个是测试图片怎么玩（感觉md这个图片挺麻烦的,用cmd Markdown写的)，目前也打算将文章中的图片放在博客GitHub仓库中了，不想重新弄仓库，这几记录下获取GitHub中图片地址，有点尴尬，直接右键图片取出地址的**
 ![此处输入图片的描述][1]
-总得来说搭建这个还是挺简单的，如果有人Clone了我的[博客主题](https://github.com/18487115313/18487115313.github.io.git)，Clone之后需要更改![][4]
+&emsp;&emsp;总得来说搭建这个还是挺简单的，如果有人Clone了我的[博客主题](https://github.com/18487115313/18487115313.github.io.git)，Clone之后需要更改![][4]
 **我在这里说一下需要更改到的地方：**  
 1.这是图标![][2]，有ico格式和svg;  
 2.更改**_config.yml**这个文件内容具体如下  
 
-```C#
+```js
   title: '还是夸张一点技术专栏'//这个是你自己的博客名  
   description: '一个专注于开发的普通技术民工。'//签名  
   keyword: 'C# VB Vue 小程序'//放的狠话  
@@ -62,6 +62,35 @@ avatar: '/assets/img/profile.png'//这个是头像
 6、文件**README.md**里面是介绍自己博客背景以及预览之类的，自己改改，你也不希望别人看你GitHub介绍链接到我的博客吧； 
 
 7、说一个评论的坑，初期搭建的时候可能同一个博客会出现多次初始化，导致之前的评论内容不见了，因为每次初始化相当于将当前博客的id给换了，所以会出现找不到的问题，第二个就是**GitMent**对IE内核有要求，win10自带的那个**Microsoft   Edge**不支持GitHub登录评论功能，出现的问题我在汉化评论的那里标注了，出现问题可以自己查一查。
+
+8、本地跑**Jekyll**,这个比较麻烦我也不打算写给个链接，一般都能装对：[[jekyll本地环境搭建(Windows)](https://www.cnblogs.com/yevon/p/3308158.html)] <sub>链接原著为博客园叶子([yevon](https://home.cnblogs.com/u/yevon/))博客</sub>,安装成功之后将**_config.yml**文件中一下代码屏蔽：  
+
+```js
+plugins: [jekyll-paginate]
+paginate: 6
+port: 4001
+```
+
+在本地仓库运行：**jekyll serve**出现以下情况说明没问题：
+
+```js
+PS I:\MeGitHub\18487115313.github.io> jekyll serve
+Configuration file: I:/MeGitHub/18487115313.github.io/_config.yml
+       Deprecation: You appear to have pagination turned on, but you haven't included the `jekyll-paginate` gem. Ensure you have `plugins: [jekyll-paginate]` in your configuration file.
+            Source: I:/MeGitHub/18487115313.github.io
+       Destination: I:/MeGitHub/18487115313.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 1.427 seconds.
+  Please add the following to your Gemfile to avoid polling for changes:
+    gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+ Auto-regeneration: enabled for 'I:/MeGitHub/18487115313.github.io'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+
+```
+
+
 
 ***
 
