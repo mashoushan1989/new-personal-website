@@ -15,7 +15,9 @@ C#的一个分页，排序集合类
 
 1.方法扩展（扩展类中）
 
-```java
+```c#
+       public static class QueryExtension
+    {
         /// <summary>
         /// 返回IQueryble分页数据
         /// </summary>
@@ -51,6 +53,14 @@ C#的一个分页，排序集合类
         public static List<T> ToPagedList<T>(this IEnumerable<T> linq, PageCtl pcl)
         {
             return new PagedList<T>(linq, pcl).ToList();
+        }
+        public static int Count(this IQueryable source)
+        {
+            if (source == null) throw new ArgumentNullException("source");
+            return (int)source.Provider.Execute(
+                Expression.Call(
+                    typeof(Queryable), "Count",
+                    new Type[] { source.ElementType }, source.Expression));
         }
 
         public static IQueryable ToPagedList(this IQueryable source, PageCtl pageCtl)
@@ -124,93 +134,66 @@ C#的一个分页，排序集合类
             //pageCtl.TotalPages = this.TotalPages;
             //pageCtl.TotalCount = this.TotalCount;
 
-            query = query.Skip((pageCtl.PageIndex - 1) * pageCtl.PageSize).Take(pageCtl.PageSize);
+            query = query._Skip((pageCtl.PageIndex - 1) * pageCtl.PageSize)._Take(pageCtl.PageSize);
             return query;
         }
+        public static IQueryable _Skip(this IQueryable source, int count)
+        {
+            if (source == null) throw new ArgumentNullException("source");
+            return source.Provider.CreateQuery(
+                Expression.Call(
+                    typeof(Queryable), "Skip",
+                    new Type[] { source.ElementType },
+                    source.Expression, Expression.Constant(count)));
+        }
+        public static IQueryable _Take(this IQueryable source, int count)
+        {
+            if (source == null) throw new ArgumentNullException("source");
+            return source.Provider.CreateQuery(
+                Expression.Call(
+                    typeof(Queryable), "Take",
+                    new Type[] { source.ElementType },
+                    source.Expression, Expression.Constant(count)));
+        }
+    }
 ```
 
 2.页面类  
 
-```java
-'VB代码
-Public Class PageCtl
-    ''' <summary>
-    ''' 当前页
-    ''' </summary>
-    Public Property PageIndex() As Integer
-    ''' <summary>
-    ''' 每页数据大小
-    ''' </summary>
-    Public Property PageSize() As Integer
-    ''' <summary>
-    ''' 总页数
-    ''' </summary>
-    Public Property TotalPages() As Integer
-    ''' <summary>
-    ''' 总记录数
-    ''' </summary>
-    Public Property TotalCount() As Integer
-    ''' <summary>
-    ''' 排序字段
-    ''' </summary>
-    Public Property OrderByField() As String
-    ''' <summary>
-    ''' 是否倒序
-    ''' </summary>
-    Public Property Dscending() As Boolean
-
-End Class
-
-Public Class PageCtl(Of T)
-    Inherits PageCtl
-    Property list As List(Of T)
-End Class
-///上面代码等同于C#代码
-public class PageCtl<T>where T : class
-{
-     /// <summary>
-    /// 当前页
-    /// </summary>
-    public int PageIndex { get; set; }
-    /// <summary>
-    /// 每页数据大小
-    /// </summary>
-    public int PageSize { get; set; }
-    /// <summary>
-    /// 总页数
-    /// </summary>
-    public int TotalPages { get; set; }
-    /// <summary>
-    /// 总记录数
-    /// </summary>
-    public int TotalCount { get; set; }
-    /// <summary>
-    /// 排序字段
-    /// </summary>
-    public string OrderByField { get; set; }
-    /// <summary>
-    /// 是否倒序
-    /// </summary>
-    public bool? Dscending { get; set; }
-}
-
+```c#
+  public class PageCtl 
+    {
+        /// <summary>
+        /// 当前页
+        /// </summary>
+        public int PageIndex { get; set; }
+        /// <summary>
+        /// 每页数据大小
+        /// </summary>
+        public int PageSize { get; set; }
+        /// <summary>
+        /// 总页数
+        /// </summary>
+        public int TotalPages { get; set; }
+        /// <summary>
+        /// 总记录数
+        /// </summary>
+        public int TotalCount { get; set; }
+        /// <summary>
+        /// 排序字段
+        /// </summary>
+        public string OrderByField { get; set; }
+        /// <summary>
+        /// 是否倒序
+        /// </summary>
+        public bool Dscending { get; set; }
+    }
 ```
 
 3.分页通用类  
 
-```java
-using CommonClass;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ServiceCommon
-{
-    /// <summary>
+```c#
+/// <summary>
     /// 分页通用类
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -436,15 +419,12 @@ namespace ServiceCommon
 
         #endregion
 
-
     }
-}
-
 ```
 
 4.接口
 
-```java
+```c#
  public interface IPagedList
     {
         /// <summary>
@@ -478,14 +458,14 @@ namespace ServiceCommon
 
 5.具体调用  (VB)
 
-```java
+```c#
  Dim page As New PageCtl With {.PageIndex = pageSize, .PageSize = pageNum, .OrderByField = "CityID"}'定义，赋页码，行数，排序字段
  res.datas = model.ToPagedList(page)'扩展方式调用
 ```
 
 6.具体调用 (C# )  
 
-```java
+```C#
 var page = new PageCtl{PageIndex = pageSize, PageSize = pageNum, OrderByField = "CityID"}
 res.datas = model.ToPagedList(page)'扩展方式调用
 ```
