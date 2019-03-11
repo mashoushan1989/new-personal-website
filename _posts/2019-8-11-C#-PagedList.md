@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Jekyll+GitMent搭建"
+title:  "C#-分页PagedList源码"
 date:   2019-03-05 20:56
-categories: jekyll
-tags: jekyll GitHub
+categories: C#
+tags: C# 分页PagedList
 ---
 * content
 {:toc}
