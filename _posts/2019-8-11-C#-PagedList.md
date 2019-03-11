@@ -9,13 +9,13 @@ tags: C# 分页PagedList
 {:toc}
 ------
 
-**剽窃项目经理框架**  
+**剽窃技术总监框架**  
 
 C#的一个分页，排序集合类  
 
 1.方法扩展（扩展类中）
 
-```c#
+```java
         /// <summary>
         /// 返回IQueryble分页数据
         /// </summary>
@@ -131,7 +131,7 @@ C#的一个分页，排序集合类
 
 2.页面类  
 
-```c#
+```java
 'VB代码
 Public Class PageCtl
     ''' <summary>
@@ -198,7 +198,7 @@ public class PageCtl<T>where T : class
 
 3.分页通用类  
 
-```c#
+```java
 using CommonClass;
 using System;
 using System.Collections.Generic;
@@ -444,7 +444,7 @@ namespace ServiceCommon
 
 4.接口
 
-```c#
+```java
  public interface IPagedList
     {
         /// <summary>
@@ -478,14 +478,14 @@ namespace ServiceCommon
 
 5.具体调用  (VB)
 
-```VB
+```java
  Dim page As New PageCtl With {.PageIndex = pageSize, .PageSize = pageNum, .OrderByField = "CityID"}'定义，赋页码，行数，排序字段
  res.datas = model.ToPagedList(page)'扩展方式调用
 ```
 
 6.具体调用 (C# )  
 
-```c#
+```java
 var page = new PageCtl{PageIndex = pageSize, PageSize = pageNum, OrderByField = "CityID"}
 res.datas = model.ToPagedList(page)'扩展方式调用
 ```

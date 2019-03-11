@@ -26,7 +26,7 @@ avatar: '/assets/img/profile.png'
 search: true
 
 # Night mode
-nightMode: true
+nightMode: false
 
 # Comments 评论功能
 comments:
@@ -70,10 +70,11 @@ exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'R
 
 # Markdown
 markdown: kramdown
-highlighter: rouge
+highlighter: Rouge
+# highlighter: rouge
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter: Rouge
 
 # RSS
 RSS: false
@@ -83,6 +84,7 @@ RSS: false
 permalink: /:year/:month/:day/:title.html
 # excerpt
 excerpt_separator: "\n\n\n\n"
+
 # Plugins
 # plugins: [jekyll-paginate]
 # paginate: 6
