@@ -9,11 +9,9 @@ tags: C# 分页PagedList
 {:toc}
 ------
 
-**剽窃技术总监框架**  
+**C#的一个分页，排序集合类 **  
 
-C#的一个分页，排序集合类  
-
-1.方法扩展（扩展类中）
+ 1.方法扩展（扩展类中）
 
 ```c#
        public static class QueryExtension
@@ -469,4 +467,10 @@ C#的一个分页，排序集合类
 var page = new PageCtl{PageIndex = pageSize, PageSize = pageNum, OrderByField = "CityID"}
 res.datas = model.ToPagedList(page)'扩展方式调用
 ```
+
+***
+
+**提供代码[传送阵](https://github.com/18487115313/C-PagedList)**
+
+***
 
