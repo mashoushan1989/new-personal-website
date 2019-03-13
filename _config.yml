@@ -14,7 +14,7 @@ nav:
 
 # Footer
 footer:
-  since: 2019 QQ:1572804782
+  since: 2019
 
 # Author 配置博主信息
 author: '还是夸张一点'
@@ -64,6 +64,7 @@ recommend-condition-size: 12 # a tag will be recommended if the size of it is mo
 baidu_tongji_id: 7d8d276a8d3670be19b0091a12eeed4a
 # google_analytics_id: UA-72449510-4 # google 分析追踪id
 # Build settings
+plugins: [jekyll-paginate]
 paginate: 5
 paginate_path: 'page:num'
 exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
@@ -83,8 +84,7 @@ RSS: false
 # See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
 permalink: /:year/:month/:day/:title.html
 # excerpt
-excerpt_separator: "\n\n\n\n"
-
+# gems: [jekyll-paginate]
 # Plugins
 # plugins: [jekyll-paginate]
 # paginate: 6
