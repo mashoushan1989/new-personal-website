@@ -61,7 +61,7 @@ public static IEnumerable<T> TyDistinct<T, V>(this IEnumerable<T> source, Func<T
 
 > 使用时，可根据多字段去重  
 >
-> 问题：排序时，使用到了默认的**Distinct**，会默认根据id去重，需要根据别的字段来去重需重新写个匿名对象。
+> 问题：排序时，使用到了默认的**Distinct**，会默认根据id去重，需要根据别的字段来去重需重新写个匿名类型。
 
 ***
 
