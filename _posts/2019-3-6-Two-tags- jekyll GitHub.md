@@ -3,7 +3,7 @@ layout: post
 title:  "Jekyll+GitMent搭建"
 date:   2019-03-05 20:56
 categories: jekyll
-tags: jekyll GitHub
+tags: jekyll
 ---
 * content
 {:toc}
@@ -89,7 +89,6 @@ Configuration file: I:/MeGitHub/18487115313.github.io/_config.yml
   Server running... press ctrl-c to stop.
 
 ```
-
 
 ***
 
